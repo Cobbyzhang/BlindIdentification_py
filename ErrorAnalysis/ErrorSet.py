@@ -13,12 +13,13 @@ import numpy as np
 class ErrorSet(object):
     __ErrorSetCell = []
     __v = []
-    __k = 0
-    __s = 0
+    __k = 0 #
+    __s = 0 #
     __degT = 0
-    _error_number = []
-    _totality = []
-    _ber = []
+    _error_number = np.array([])
+    _t = np.array([[]])
+    _totality = np.array([])
+    _ber = np.array([])
 
     @property
     def error_number(self):
@@ -32,7 +33,7 @@ class ErrorSet(object):
     def ber(self):
         return self._ber
 
-    def __init__(self,ErrorSetCell,v):
+    def __init__(self, ErrorSetCell, v, t):
         self.__ErrorSetCell = ErrorSetCell
         self.__s = np.size(self.__ErrorSetCell)
         self.__k = np.size(v)
